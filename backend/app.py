@@ -33,6 +33,10 @@ FRONTEND = ROOT / "frontend"
 REPORTS = ROOT / "reports"
 MODELS = ROOT / "models"
 
+# Risk thresholds (can be overridden with env vars)
+RISK_THRESHOLD_HIGH = float(os.environ.get("RISK_THRESHOLD_HIGH", "0.65"))
+RISK_THRESHOLD_MED = float(os.environ.get("RISK_THRESHOLD_MED", "0.5"))
+
 app = Flask(
     __name__,
     static_folder=str(FRONTEND),
@@ -367,9 +371,22 @@ def api_analyze():
 
     label = "Not Secure" if pred_class == 1 else "Secure"
     top = load_top_features_report() or {}
+    # Map probability to an interpretable risk level
+    def _risk_level_from_proba(p: float) -> str:
+        try:
+            p = float(p)
+        except Exception:
+            return "Unknown"
+        if p >= RISK_THRESHOLD_HIGH:
+            return "High"
+        if p >= RISK_THRESHOLD_MED:
+            return "Medium"
+        return "Low"
+
     report["ml"] = {
         "predicted_label": label,
-        "risk_score_not_secure_proba": risk,
+        "risk_score_not_secure_proba": float(risk),
+        "risk_level": _risk_level_from_proba(risk),
         "class_probabilities": {"Secure": float(proba[0]), "Not Secure": float(proba[1])},
         "top_features": top.get("permutation_importance_train_sample", top.get("random_forest_importances", []))[:10],
         "feature_importances_rf": (top.get("random_forest_importances") or [])[:10],

@@ -242,6 +242,14 @@ function riskClass(score) {
   return score >= 0.5 ? "risk-high" : "risk-low";
 }
 
+function riskLevelClassFromString(level) {
+  if (!level) return "risk-low";
+  const l = String(level).toLowerCase();
+  if (l === "high") return "risk-high";
+  if (l === "medium") return "risk-medium";
+  return "risk-low";
+}
+
 function renderReport(data) {
   const el = $("report");
   el.classList.remove("hidden");
@@ -278,12 +286,10 @@ function renderReport(data) {
   el.innerHTML = `
     <div class="card">
       <h2>Machine learning</h2>
-      <p><span class="risk-pill ${riskClass(risk)}">Predicted: ${escapeHtml(
-    pred
-  )}</span></p>
-      <p class="kv"><span>Risk score (P Not Secure)</span><strong>${fmtNum(
-        risk
-      )}</strong></p>
+      <p><span class="risk-pill">Predicted: ${escapeHtml(pred)}</span> <span class="risk-pill ${riskLevelClassFromString(
+    ml && ml.risk_level ? ml.risk_level : null
+  )}">${ml && ml.risk_level ? escapeHtml(ml.risk_level) : "Unknown"}</span></p>
+      <p class="kv"><span>Risk score (P Not Secure)</span><strong>${fmtNum(risk)}</strong></p>
       ${
         ml && ml.class_probabilities
           ? `<p class="muted">Secure: ${fmtNum(

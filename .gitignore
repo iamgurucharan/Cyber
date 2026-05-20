@@ -5,6 +5,72 @@ __pycache__/
 
 # Virtual environments
 venv/
+.venv/
+env/
+ENV/
+
+# Byte-compiled / optimized / DLL files
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+
+# PyInstaller
+#  Usually these files are written by a python script from a template
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+.tox/
+*.coverage
+*.coverage.*
+.cache
+.pytest_cache/
+nosetests.xml
+coverage.xml
+*,cover
+.hypothesis/
+
+# IDEs
+.idea/
+*.sublime-project
+*.sublime-workspace
+.vscode/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Local env and secrets
+.env
+.env.local
+.env.*.local
+
+# Machine learning artifacts & large files
+/models/
+/reports/
+/data/
+*.joblib
+*.pkl
+*.h5
+artifacts.joblib
+preprocessor_info.json
+
+# logs
+logs/
+*.log
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+venv/
 env/
 .venv/
 

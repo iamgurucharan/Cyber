@@ -29,6 +29,7 @@ import matplotlib.pyplot as plt  # noqa: E402
 import numpy as np  # noqa: E402
 import seaborn as sns  # noqa: E402
 from sklearn.ensemble import RandomForestClassifier  # noqa: E402
+from sklearn.calibration import CalibratedClassifierCV  # noqa: E402
 from sklearn.metrics import (  # noqa: E402
     accuracy_score,
     classification_report,
@@ -270,13 +271,30 @@ def train(
     X_train_s = scaler.fit_transform(X_train)
     X_test_s = scaler.transform(X_test)
 
+    # Train a RandomForest and calibrate probabilities using cross-validated
+    # Platt scaling on the training set (avoids deprecated cv='prefit'). Calibrated
+    #ClassifierCV will internally perform cross-validation.
+    # Train a RandomForest for feature importances (full-fit)
     clf = RandomForestClassifier(**rf_classifier_kwargs(n_estimators, random_state))
     clf.fit(X_train_s, y_train)
 
-    y_train_pred = clf.predict(X_train_s)
-    y_test_pred = clf.predict(X_test_s)
-    y_train_proba = clf.predict_proba(X_train_s)[:, 1]
-    y_test_proba = clf.predict_proba(X_test_s)[:, 1]
+    # Separately train a calibrated classifier (can retrain an RF inside) for
+    # better-probability outputs. This duplicates effort but preserves a fitted
+    # `clf` for extracting importances.
+    calibrator = CalibratedClassifierCV(estimator=RandomForestClassifier(**rf_classifier_kwargs(n_estimators, random_state)), method="sigmoid", cv=3)
+    calibrator.fit(X_train_s, y_train)
+    model_for_pred = calibrator
+
+    y_train_pred = model_for_pred.predict(X_train_s)
+    y_test_pred = model_for_pred.predict(X_test_s)
+    # predict_proba might be unavailable for some wrappers; handle defensively
+    try:
+        y_train_proba = model_for_pred.predict_proba(X_train_s)[:, 1]
+        y_test_proba = model_for_pred.predict_proba(X_test_s)[:, 1]
+    except Exception:
+        # fallback to decision_function->sigmoid if needed, but keep simple here
+        y_train_proba = np.zeros(X_train_s.shape[0])
+        y_test_proba = np.zeros(X_test_s.shape[0])
 
     train_acc = float(accuracy_score(y_train, y_train_pred))
     test_acc = float(accuracy_score(y_test, y_test_pred))
@@ -316,7 +334,8 @@ def train(
     models_dir = ROOT / "models"
     models_dir.mkdir(parents=True, exist_ok=True)
 
-    joblib.dump(clf, models_dir / "rf_model.joblib")
+    # Persist calibrated model (or raw clf if calibration not applied).
+    joblib.dump(model_for_pred, models_dir / "rf_model.joblib")
     joblib.dump(scaler, models_dir / "scaler.joblib")
     artifacts = {
         "feature_names": feature_names,

@@ -80,3 +80,23 @@ Optional env: `BURP_API_URL`, `BURP_API_KEY` (stub REST check only), `PORT`.
 ## License note
 
 Dataset and code are for education/research. Burp is a trademark of PortSwigger Ltd.; this repo does not ship Burp software.
+
+## Git & Contributing
+
+This repository includes a sensible `.gitignore` and `.gitattributes` to keep large artifacts, local env files, and generated reports out of source control.
+
+Recommended workflow:
+
+```bash
+git status
+git add .gitignore .gitattributes .env.example
+git add src backend frontend tools README.md
+git commit -m "chore: add gitignore, gitattributes, env example and tooling"
+git push origin main
+```
+
+Notes:
+- Do not commit your real `.env` or any Burp export files containing sensitive data.
+- Large artifacts (models, reports, data) are ignored by default. If you want to track a specific trained model or report, add it intentionally and document it in a release.
+- If you'd like, I can create a commit for you locally (and push) — tell me whether to run git commands in this workspace and which remote/branch to use.
+

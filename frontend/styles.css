@@ -299,6 +299,11 @@ button.secondary {
   color: var(--accent);
 }
 
+.risk-medium {
+  background: rgba(255, 179, 71, 0.12);
+  color: var(--warn);
+}
+
 .muted {
   color: var(--muted);
   font-size: 0.9rem;

@@ -1,0 +1,541 @@
+[
+  {
+    "url": "https://example.com",
+    "final_url": "https://example.com/",
+    "scan_error": null,
+    "predicted_label": "Not Secure",
+    "risk_score_not_secure_proba": 0.7247559318957151,
+    "class_probs": [
+      0.2752440681042849,
+      0.7247559318957151
+    ]
+  },
+  {
+    "url": "https://www.google.com",
+    "final_url": "https://www.google.com/",
+    "scan_error": null,
+    "predicted_label": "Not Secure",
+    "risk_score_not_secure_proba": 0.5782181954755542,
+    "class_probs": [
+      0.4217818045244458,
+      0.5782181954755542
+    ]
+  },
+  {
+    "url": "https://www.youtube.com",
+    "final_url": "https://www.youtube.com/",
+    "scan_error": null,
+    "predicted_label": "Secure",
+    "risk_score_not_secure_proba": 0.4665390014731247,
+    "class_probs": [
+      0.5334609985268752,
+      0.4665390014731247
+    ]
+  },
+  {
+    "url": "https://www.facebook.com",
+    "final_url": "https://www.facebook.com/",
+    "scan_error": null,
+    "predicted_label": "Secure",
+    "risk_score_not_secure_proba": 0.4331513396950123,
+    "class_probs": [
+      0.5668486603049877,
+      0.4331513396950123
+    ]
+  },
+  {
+    "url": "https://www.amazon.com",
+    "final_url": "https://www.amazon.com/",
+    "scan_error": null,
+    "predicted_label": "Not Secure",
+    "risk_score_not_secure_proba": 0.7493246643503255,
+    "class_probs": [
+      0.2506753356496745,
+      0.7493246643503255
+    ]
+  },
+  {
+    "url": "https://www.yahoo.com",
+    "final_url": "https://www.yahoo.com/",
+    "scan_error": null,
+    "predicted_label": "Secure",
+    "risk_score_not_secure_proba": 0.4715598622084472,
+    "class_probs": [
+      0.5284401377915529,
+      0.4715598622084472
+    ]
+  },
+  {
+    "url": "https://www.reddit.com",
+    "final_url": "https://www.reddit.com/",
+    "scan_error": null,
+    "predicted_label": "Secure",
+    "risk_score_not_secure_proba": 0.4564915255546024,
+    "class_probs": [
+      0.5435084744453976,
+      0.4564915255546024
+    ]
+  },
+  {
+    "url": "https://www.instagram.com",
+    "final_url": "https://www.instagram.com/",
+    "scan_error": null,
+    "predicted_label": "Not Secure",
+    "risk_score_not_secure_proba": 0.570012316653334,
+    "class_probs": [
+      0.42998768334666604,
+      0.570012316653334
+    ]
+  },
+  {
+    "url": "https://www.linkedin.com",
+    "final_url": "https://www.linkedin.com/",
+    "scan_error": null,
+    "predicted_label": "Not Secure",
+    "risk_score_not_secure_proba": 0.5003471854670914,
+    "class_probs": [
+      0.49965281453290855,
+      0.5003471854670914
+    ]
+  },
+  {
+    "url": "https://www.netflix.com",
+    "final_url": "https://www.netflix.com/in/",
+    "scan_error": null,
+    "predicted_label": "Not Secure",
+    "risk_score_not_secure_proba": 0.5492205376361267,
+    "class_probs": [
+      0.45077946236387334,
+      0.5492205376361267
+    ]
+  },
+  {
+    "url": "https://www.bing.com",
+    "final_url": "https://www.bing.com/",
+    "scan_error": null,
+    "predicted_label": "Not Secure",
+    "risk_score_not_secure_proba": 0.5084230186267924,
+    "class_probs": [
+      0.4915769813732076,
+      0.5084230186267924
+    ]
+  },
+  {
+    "url": "https://www.pinterest.com",
+    "final_url": "https://www.pinterest.com/",
+    "scan_error": null,
+    "predicted_label": "Secure",
+    "risk_score_not_secure_proba": 0.4995954208368218,
+    "class_probs": [
+      0.5004045791631782,
+      0.4995954208368218
+    ]
+  },
+  {
+    "url": "https://www.ebay.com",
+    "final_url": "https://www.ebay.com",
+    "scan_error": "HTTPSConnectionPool(host='www.ebay.com', port=443): Read timed out. (read timeout=12)",
+    "predicted_label": "Not Secure",
+    "risk_score_not_secure_proba": 0.7157572663989942,
+    "class_probs": [
+      0.2842427336010058,
+      0.7157572663989942
+    ]
+  },
+  {
+    "url": "https://www.twitch.tv",
+    "final_url": "https://www.twitch.tv/",
+    "scan_error": null,
+    "predicted_label": "Not Secure",
+    "risk_score_not_secure_proba": 0.5873624740953322,
+    "class_probs": [
+      0.41263752590466785,
+      0.5873624740953322
+    ]
+  },
+  {
+    "url": "https://www.walmart.com",
+    "final_url": "https://www.walmart.com/",
+    "scan_error": null,
+    "predicted_label": "Not Secure",
+    "risk_score_not_secure_proba": 0.576930827858205,
+    "class_probs": [
+      0.42306917214179496,
+      0.576930827858205
+    ]
+  },
+  {
+    "url": "https://wordpress.com",
+    "final_url": "https://wordpress.com/",
+    "scan_error": null,
+    "predicted_label": "Not Secure",
+    "risk_score_not_secure_proba": 0.5678158341999607,
+    "class_probs": [
+      0.43218416580003927,
+      0.5678158341999607
+    ]
+  },
+  {
+    "url": "https://www.apple.com",
+    "final_url": "https://www.apple.com/",
+    "scan_error": null,
+    "predicted_label": "Not Secure",
+    "risk_score_not_secure_proba": 0.5100126778732547,
+    "class_probs": [
+      0.48998732212674534,
+      0.5100126778732547
+    ]
+  },
+  {
+    "url": "https://www.microsoft.com",
+    "final_url": "https://www.microsoft.com/",
+    "scan_error": null,
+    "predicted_label": "Not Secure",
+    "risk_score_not_secure_proba": 0.6955885071329001,
+    "class_probs": [
+      0.3044114928670999,
+      0.6955885071329001
+    ]
+  },
+  {
+    "url": "https://github.com",
+    "final_url": "https://github.com/",
+    "scan_error": null,
+    "predicted_label": "Not Secure",
+    "risk_score_not_secure_proba": 0.5171557596269758,
+    "class_probs": [
+      0.4828442403730242,
+      0.5171557596269758
+    ]
+  },
+  {
+    "url": "https://stackoverflow.com",
+    "final_url": "https://stackoverflow.com/",
+    "scan_error": null,
+    "predicted_label": "Not Secure",
+    "risk_score_not_secure_proba": 0.6154322988548412,
+    "class_probs": [
+      0.3845677011451588,
+      0.6154322988548412
+    ]
+  },
+  {
+    "url": "https://medium.com",
+    "final_url": "https://medium.com/",
+    "scan_error": null,
+    "predicted_label": "Not Secure",
+    "risk_score_not_secure_proba": 0.5372766018952368,
+    "class_probs": [
+      0.46272339810476315,
+      0.5372766018952368
+    ]
+  },
+  {
+    "url": "https://www.cnn.com",
+    "final_url": "https://www.cnn.com/",
+    "scan_error": null,
+    "predicted_label": "Not Secure",
+    "risk_score_not_secure_proba": 0.5740067290020874,
+    "class_probs": [
+      0.4259932709979126,
+      0.5740067290020874
+    ]
+  },
+  {
+    "url": "https://www.bbc.co.uk",
+    "final_url": "https://www.bbc.co.uk/",
+    "scan_error": null,
+    "predicted_label": "Not Secure",
+    "risk_score_not_secure_proba": 0.531089151702285,
+    "class_probs": [
+      0.468910848297715,
+      0.531089151702285
+    ]
+  },
+  {
+    "url": "https://www.nytimes.com",
+    "final_url": "https://www.nytimes.com/",
+    "scan_error": null,
+    "predicted_label": "Not Secure",
+    "risk_score_not_secure_proba": 0.5923818797721712,
+    "class_probs": [
+      0.40761812022782884,
+      0.5923818797721712
+    ]
+  },
+  {
+    "url": "https://www.theguardian.com",
+    "final_url": "https://www.theguardian.com/international",
+    "scan_error": null,
+    "predicted_label": "Not Secure",
+    "risk_score_not_secure_proba": 0.5522387775693938,
+    "class_probs": [
+      0.44776122243060623,
+      0.5522387775693938
+    ]
+  },
+  {
+    "url": "https://www.paypal.com",
+    "final_url": "https://www.paypal.com/in/home",
+    "scan_error": null,
+    "predicted_label": "Not Secure",
+    "risk_score_not_secure_proba": 0.5987569983541978,
+    "class_probs": [
+      0.4012430016458022,
+      0.5987569983541978
+    ]
+  },
+  {
+    "url": "https://www.adobe.com",
+    "final_url": "https://www.adobe.com",
+    "scan_error": "HTTPSConnectionPool(host='www.adobe.com', port=443): Read timed out. (read timeout=12)",
+    "predicted_label": "Not Secure",
+    "risk_score_not_secure_proba": 0.7157572663989938,
+    "class_probs": [
+      0.28424273360100616,
+      0.7157572663989938
+    ]
+  },
+  {
+    "url": "https://www.dropbox.com",
+    "final_url": "https://www.dropbox.com/",
+    "scan_error": null,
+    "predicted_label": "Not Secure",
+    "risk_score_not_secure_proba": 0.5357158358407611,
+    "class_probs": [
+      0.4642841641592389,
+      0.5357158358407611
+    ]
+  },
+  {
+    "url": "https://slack.com",
+    "final_url": "https://slack.com/intl/en-in/",
+    "scan_error": null,
+    "predicted_label": "Not Secure",
+    "risk_score_not_secure_proba": 0.6135959433627688,
+    "class_probs": [
+      0.3864040566372312,
+      0.6135959433627688
+    ]
+  },
+  {
+    "url": "https://discord.com",
+    "final_url": "https://discord.com/",
+    "scan_error": null,
+    "predicted_label": "Not Secure",
+    "risk_score_not_secure_proba": 0.5402008957157044,
+    "class_probs": [
+      0.4597991042842956,
+      0.5402008957157044
+    ]
+  },
+  {
+    "url": "https://www.spotify.com",
+    "final_url": "https://open.spotify.com/",
+    "scan_error": null,
+    "predicted_label": "Secure",
+    "risk_score_not_secure_proba": 0.48017342213544517,
+    "class_probs": [
+      0.5198265778645548,
+      0.48017342213544517
+    ]
+  },
+  {
+    "url": "https://www.quora.com",
+    "final_url": "https://www.quora.com/",
+    "scan_error": null,
+    "predicted_label": "Not Secure",
+    "risk_score_not_secure_proba": 0.602927694225286,
+    "class_probs": [
+      0.397072305774714,
+      0.602927694225286
+    ]
+  },
+  {
+    "url": "https://news.ycombinator.com",
+    "final_url": "https://news.ycombinator.com/",
+    "scan_error": null,
+    "predicted_label": "Secure",
+    "risk_score_not_secure_proba": 0.45705739798007644,
+    "class_probs": [
+      0.5429426020199235,
+      0.45705739798007644
+    ]
+  },
+  {
+    "url": "https://www.etsy.com",
+    "final_url": "https://www.etsy.com/",
+    "scan_error": null,
+    "predicted_label": "Not Secure",
+    "risk_score_not_secure_proba": 0.7407412267985569,
+    "class_probs": [
+      0.2592587732014431,
+      0.7407412267985569
+    ]
+  },
+  {
+    "url": "https://www.salesforce.com",
+    "final_url": "https://www.salesforce.com/in/?ir=1",
+    "scan_error": null,
+    "predicted_label": "Not Secure",
+    "risk_score_not_secure_proba": 0.6318484538536543,
+    "class_probs": [
+      0.3681515461463457,
+      0.6318484538536543
+    ]
+  },
+  {
+    "url": "https://www.shopify.com",
+    "final_url": "https://www.shopify.com/",
+    "scan_error": null,
+    "predicted_label": "Not Secure",
+    "risk_score_not_secure_proba": 0.6489191903458396,
+    "class_probs": [
+      0.35108080965416044,
+      0.6489191903458396
+    ]
+  },
+  {
+    "url": "https://www.mozilla.org",
+    "final_url": "https://www.mozilla.org/",
+    "scan_error": null,
+    "predicted_label": "Not Secure",
+    "risk_score_not_secure_proba": 0.5098448435358274,
+    "class_probs": [
+      0.4901551564641726,
+      0.5098448435358274
+    ]
+  },
+  {
+    "url": "https://www.oracle.com",
+    "final_url": "https://www.oracle.com/",
+    "scan_error": null,
+    "predicted_label": "Not Secure",
+    "risk_score_not_secure_proba": 0.6242772587373012,
+    "class_probs": [
+      0.3757227412626988,
+      0.6242772587373012
+    ]
+  },
+  {
+    "url": "https://www.wix.com",
+    "final_url": "https://www.wix.com/",
+    "scan_error": null,
+    "predicted_label": "Not Secure",
+    "risk_score_not_secure_proba": 0.5916208950289467,
+    "class_probs": [
+      0.40837910497105334,
+      0.5916208950289467
+    ]
+  },
+  {
+    "url": "https://www.ikea.com",
+    "final_url": "https://www.ikea.com/",
+    "scan_error": null,
+    "predicted_label": "Not Secure",
+    "risk_score_not_secure_proba": 0.6326522318555431,
+    "class_probs": [
+      0.3673477681444569,
+      0.6326522318555431
+    ]
+  },
+  {
+    "url": "https://www.imdb.com",
+    "final_url": "https://www.imdb.com/",
+    "scan_error": null,
+    "predicted_label": "Not Secure",
+    "risk_score_not_secure_proba": 0.6820474422362869,
+    "class_probs": [
+      0.3179525577637131,
+      0.6820474422362869
+    ]
+  },
+  {
+    "url": "https://www.tripadvisor.com",
+    "final_url": "https://www.tripadvisor.com/",
+    "scan_error": null,
+    "predicted_label": "Not Secure",
+    "risk_score_not_secure_proba": 0.680527634836401,
+    "class_probs": [
+      0.319472365163599,
+      0.680527634836401
+    ]
+  },
+  {
+    "url": "https://www.target.com",
+    "final_url": "https://www.target.com/",
+    "scan_error": null,
+    "predicted_label": "Not Secure",
+    "risk_score_not_secure_proba": 0.5841378417666607,
+    "class_probs": [
+      0.4158621582333393,
+      0.5841378417666607
+    ]
+  },
+  {
+    "url": "https://www.zillow.com",
+    "final_url": "https://www.zillow.com/",
+    "scan_error": null,
+    "predicted_label": "Not Secure",
+    "risk_score_not_secure_proba": 0.5625279521011823,
+    "class_probs": [
+      0.43747204789881766,
+      0.5625279521011823
+    ]
+  },
+  {
+    "url": "https://www.craigslist.org",
+    "final_url": "https://kolkata.craigslist.org/",
+    "scan_error": null,
+    "predicted_label": "Not Secure",
+    "risk_score_not_secure_proba": 0.5319777986877482,
+    "class_probs": [
+      0.4680222013122518,
+      0.5319777986877482
+    ]
+  },
+  {
+    "url": "https://www.behance.net",
+    "final_url": "https://www.behance.net/",
+    "scan_error": null,
+    "predicted_label": "Not Secure",
+    "risk_score_not_secure_proba": 0.7056447588900376,
+    "class_probs": [
+      0.29435524110996236,
+      0.7056447588900376
+    ]
+  },
+  {
+    "url": "https://www.bloomberg.com",
+    "final_url": "https://www.bloomberg.com/",
+    "scan_error": null,
+    "predicted_label": "Not Secure",
+    "risk_score_not_secure_proba": 0.600155704698632,
+    "class_probs": [
+      0.399844295301368,
+      0.600155704698632
+    ]
+  },
+  {
+    "url": "https://www.healthline.com",
+    "final_url": "https://www.healthline.com/",
+    "scan_error": null,
+    "predicted_label": "Not Secure",
+    "risk_score_not_secure_proba": 0.5135590414425721,
+    "class_probs": [
+      0.48644095855742786,
+      0.5135590414425721
+    ]
+  },
+  {
+    "url": "https://www.nih.gov",
+    "final_url": "https://www.nih.gov/",
+    "scan_error": null,
+    "predicted_label": "Not Secure",
+    "risk_score_not_secure_proba": 0.5572608413626856,
+    "class_probs": [
+      0.4427391586373144,
+      0.5572608413626856
+    ]
+  }
+]

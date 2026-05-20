@@ -220,12 +220,27 @@ def extended_csv_to_training_frame(df: pd.DataFrame) -> pd.DataFrame:
             hdr_a |= (seed % 5 == 0)
             hdr_b |= (seed % 6 == 0)
 
-        sev_rank = {"critical": 4, "high": 3, "moderate": 2, "low": 1}.get(sev.lower(), 2)
-        burp_score = int(np.clip(18 + sev_rank * 16 + (seed % 13) + sql * 3 + xss * 2, 5, 99))
-        burp_crit = 1 if crit else int((seed % 17) == 0 and sev_rank >= 3)
-        burp_high = int(high or (med and (seed % 4 == 0)))
-        burp_med = int(med or low or (seed % 3 == 0))
-        burp_low = int(1 + (seed // 7) % 6) if sev_rank >= 2 else int((seed // 3) % 4)
+        # Produce deterministic, Burp-like metrics from the same seed used for
+        # other pseudo-values. This mirrors the runtime `simulate_from_scan`
+        # heuristics so training-time burp fields better match inference-time
+        # simulated Burp metrics (reduces label leakage and improves generalization).
+        h = int(hdr_a) + int(hdr_b) + int(hdr_c) + int(hdr_d)
+        ssl_ok = int((seed % 10) < 7)
+        mixed_val = mixed
+        insecure_ck_val = cookies
+        forms = int((seed // 5) % 9)
+        ext_scripts = int((seed // 11) % 14)
+
+        base = 55.0 - 8 * h - 10 * ssl_ok + 12 * mixed_val + 8 * insecure_ck_val
+        base += ext_scripts * 0.8
+        base += forms * 0.5
+        noise = float(((seed >> 5) % 9) - 4)
+        burp_score = int(np.clip(base + noise, 5.0, 99.0))
+
+        burp_crit = 1 if burp_score > 85 and ((seed % 7) == 0) else 0
+        burp_high = max(0, int((burp_score - 40) / 25))
+        burp_med = max(0, int(burp_score / 20))
+        burp_low = max(0, int(burp_score / 10))
 
         summary = str(row.get("Summary", "") or "")
         resp_ms = int(np.clip(len(summary) // 12 + (seed % 220), 20, 1200))
