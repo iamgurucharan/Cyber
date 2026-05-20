@@ -1,0 +1,111 @@
+{
+  "engineered_feature_count": 34,
+  "base_feature_names": [
+    "ssl_valid",
+    "ssl_expiry_days",
+    "has_hsts",
+    "has_csp",
+    "has_xframe",
+    "has_xss_protection",
+    "open_ports_count",
+    "critical_cves",
+    "high_cves",
+    "medium_cves",
+    "low_cves",
+    "sql_injection_detected",
+    "xss_detected",
+    "csrf_missing",
+    "auth_weak",
+    "insecure_cookies",
+    "mixed_content",
+    "server_banner_exposed",
+    "directory_listing",
+    "default_credentials",
+    "response_time_ms",
+    "content_length",
+    "forms_count",
+    "external_scripts_count",
+    "redirects_to_http",
+    "burp_scan_score",
+    "burp_issues_critical",
+    "burp_issues_high",
+    "burp_issues_medium",
+    "burp_issues_low"
+  ],
+  "derived_feature_names": [
+    "total_cves",
+    "total_burp_issues",
+    "header_score",
+    "vuln_flag_count"
+  ],
+  "derived_definitions": {
+    "total_cves": "critical_cves + high_cves + medium_cves + low_cves",
+    "total_burp_issues": "sum of burp_issues_* columns",
+    "header_score": "sum of has_hsts, has_csp, has_xframe, has_xss_protection",
+    "vuln_flag_count": "sum of binary vulnerability/heuristic flags"
+  },
+  "label": {
+    "classes": [
+      "Secure",
+      "Not Secure"
+    ],
+    "positive_class": "Not Secure",
+    "encoding": {
+      "Secure": 0,
+      "Not Secure": 1
+    }
+  },
+  "scaling": "StandardScaler fit on training split only (see train_model.py)",
+  "training_dataset": {
+    "schema": "extended_text",
+    "resolved_path": "C:\\Users\\guru2\\OneDrive\\Desktop\\Cyber\\data\\extended_realistic_vulnerability_dataset_10000.csv",
+    "n_rows": 13350,
+    "source_columns": [
+      "Date",
+      "Link",
+      "Severity",
+      "Summary",
+      "Title"
+    ],
+    "label_rule": "Critical|High -> Not Secure; Moderate|Low -> Secure",
+    "column_mapping_notes": [
+      "Extended CSV has no live scanner/Burp exports per row; base columns are synthesized: Severity maps to exactly one of critical_cves/high_cves/medium_cves/low_cves; Title+Summary substring rules set binary vuln flags; transport/header/Burp-like numerics use deterministic pseudo-values from SHA256(Link|Title) for reproducible spread; url is set from Link (still excluded from X)."
+    ]
+  },
+  "feature_names": [
+    "ssl_valid",
+    "ssl_expiry_days",
+    "has_hsts",
+    "has_csp",
+    "has_xframe",
+    "has_xss_protection",
+    "open_ports_count",
+    "critical_cves",
+    "high_cves",
+    "medium_cves",
+    "low_cves",
+    "sql_injection_detected",
+    "xss_detected",
+    "csrf_missing",
+    "auth_weak",
+    "insecure_cookies",
+    "mixed_content",
+    "server_banner_exposed",
+    "directory_listing",
+    "default_credentials",
+    "response_time_ms",
+    "content_length",
+    "forms_count",
+    "external_scripts_count",
+    "redirects_to_http",
+    "burp_scan_score",
+    "burp_issues_critical",
+    "burp_issues_high",
+    "burp_issues_medium",
+    "burp_issues_low",
+    "total_cves",
+    "total_burp_issues",
+    "header_score",
+    "vuln_flag_count"
+  ]
+}
