@@ -26,11 +26,14 @@ jobs:
             pip install -r requirements.txt
           fi
       - name: Syntax check (compileall)
-        run: python -m compileall -q .
+        run: |
+          # Limit compilation to Python source directories to avoid noise from data/artifacts
+          python -m compileall -q src backend tools frontend || (echo 'compileall failed' && exit 1)
       - name: Optional linters (if available)
         run: |
           if command -v flake8 >/dev/null 2>&1; then
-            flake8 . || true
+            # Run linters but don't fail the job (helpful for forks without dev deps)
+            flake8 src backend tools frontend || true
           else
             echo 'flake8 not installed; skipping lint'
           fi
